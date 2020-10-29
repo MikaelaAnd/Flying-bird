@@ -13,7 +13,8 @@ function start() {
 /** Sets interval to make bird "fly" */
 function fly() {
     setInterval(moveBirdToTheRight, 12);
-    
+    //fågeln flyttar till vänster efter 4sek.
+    // setTimeout(moveBirdToTheLeft, 4000)
 }
 /**  Moves the bird small steps in percentage to the right*/
 function moveBirdToTheRight() {
