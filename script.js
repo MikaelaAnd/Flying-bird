@@ -39,7 +39,7 @@ function moveBirdToTheRight() {
     //Render position
     bird.style.left = left + '%';
 
-    if (left > 30) {
+    if (left > 90) {
         bird.style.transform = "scaleX(-1)";
         flyRight = false;
     }
