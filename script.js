@@ -3,6 +3,7 @@ window.onload = start;
 
 /**The position of the bird relative to the left side of the page*/
 let left = 0;
+let flyRight = true;
 
 
 
@@ -14,30 +15,43 @@ function start() {
 // Denna funktion kmr köras en gång i sekunden, vilket gör att fågeln flyttar på sig
 /** Sets interval to make bird "fly" */
 function fly() {
-    setInterval(moveBirdToTheRight, 12);
+    setInterval(moveBird, 12);
     //fågeln flyttar till vänster efter 4sek.
-    
-    
 }
+
+function moveBird() {
+    if (flyRight) {
+        moveBirdToTheRight();
+    }
+    else {
+        moveBirdToTheLeft();
+    }
+
+}
+
+
 /**  Moves the bird small steps in percentage to the right*/
 function moveBirdToTheRight() {
     //Fetch bird from html
-    const bird = document.getElementById(bird1);
+    const bird = document.querySelector('img')
     // Update position
     left += 0.1;
     //Render position
-    bird1.style.left = left + '%';
+    bird.style.left = left + '%';
+
     if (left > 30) {
-        setInterval(moveBirdToTheLeft, 12);
-        left -= 0.1;
+        bird.style.transform = "scaleX(-1)";
+        flyRight = false;
     }
 }
 
 function moveBirdToTheLeft() {
-    const bird = document.getElementById(bird2)
+    const bird = document.querySelector('img')
+    bird.style.left = left + '%';
+
     left -= 0.1;
     if (left < 0) {
-        setInterval(moveBirdToTheRight, 12);
-        left += 0.1;
+        bird.style.transform = "scaleX(1)";
+        flyRight = true;
     }
 }

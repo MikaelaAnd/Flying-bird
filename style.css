@@ -2,17 +2,7 @@ body {
     margin: 0;
 }
 
-.bird1 {
+img {
     position: fixed;
     width: 10rem;
-}
-
-.bird2 {
-    position: fixed;
-    width: 10rem;
-    transform: scaleX(-1);
-}
-
-.display-none {
-    display: none;
 }
