@@ -22,11 +22,11 @@ function fly() {
 /**  Moves the bird small steps in percentage to the right*/
 function moveBirdToTheRight() {
     //Fetch bird from html
-    const bird = document.querySelector('img');
+    const bird = document.getElementById(bird1);
     // Update position
     left += 0.1;
     //Render position
-    bird.style.left = left + '%';
+    bird1.style.left = left + '%';
     if (left > 30) {
         setInterval(moveBirdToTheLeft, 12);
         left -= 0.1;
@@ -34,6 +34,7 @@ function moveBirdToTheRight() {
 }
 
 function moveBirdToTheLeft() {
+    const bird = document.getElementById(bird2)
     left -= 0.1;
     if (left < 0) {
         setInterval(moveBirdToTheRight, 12);
